@@ -39,5 +39,28 @@ textarea {
 }
 
 .apartment {
-  border-bottom: 1px solid #999;
+  border-bottom: 2px solid #999;
+}
+
+.apartment-table {
+  padding: 30px;
+}
+
+.apartment-table th {
+  text-align: left;
+  padding: 20px 0;
+}
+
+.station-table {
+  padding: 10px 0 0 20px;
+
+}
+
+.station-table th {
+  text-align: left;
+  padding: 15px;
+}
+
+.content-nav {
+  margin-top: 20px;
 }
