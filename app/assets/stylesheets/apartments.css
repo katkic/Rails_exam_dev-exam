@@ -28,6 +28,7 @@ a:hover {
 
 .notice {
   color: green;
+  font-size: 22px;
 }
 
 input[type="text"],
