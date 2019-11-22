@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+  before_action :set_apartment, only: %i[show]
   def index
   end
 
@@ -40,5 +41,9 @@ class ApartmentsController < ApplicationController
       :remarks,
       stations_attributes: %i[id route name walking_minutes]
     )
+  end
+
+  def set_apartment
+    @apartment = Apartment.find(params[:id])
   end
 end
