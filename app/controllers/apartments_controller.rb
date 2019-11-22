@@ -1,6 +1,8 @@
 class ApartmentsController < ApplicationController
   before_action :set_apartment, only: %i[show]
+
   def index
+    @apartments = Apartment.order(created_at: :desc)
   end
 
   def show
