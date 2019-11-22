@@ -39,6 +39,12 @@ textarea {
   margin-bottom: 10px;
 }
 
+input[type="submit"] {
+  margin-bottom: 15px;
+  width: 60px;
+  cursor: pointer;
+}
+
 .apartment {
   border-bottom: 1px solid #999;
 }
