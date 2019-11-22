@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  before_action :set_apartment, only: %i[show]
+  before_action :set_apartment, only: %i[show edit update]
 
   def index
     @apartments = Apartment.order(created_at: :desc)
@@ -14,6 +14,7 @@ class ApartmentsController < ApplicationController
   end
 
   def edit
+    @apartment.stations.build
   end
 
   def create
@@ -27,6 +28,11 @@ class ApartmentsController < ApplicationController
   end
 
   def update
+    if @apartment.update(apartment_params)
+      redirect_to apartment_path(@apartment)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -41,7 +47,7 @@ class ApartmentsController < ApplicationController
       :rent,
       :year,
       :remarks,
-      stations_attributes: %i[id route name walking_minutes]
+      stations_attributes: %i[id route name walking_minutes number]
     )
   end
 

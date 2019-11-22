@@ -30,6 +30,8 @@
   <div class="station">
     <%= f.fields_for :stations do |station| %>
       <h3>最寄駅<%= station.index + 1 %></h3>
+      <%= station.hidden_field :number, value: station.index + 1 %>
+
       <p><%= station.label :route, '路線名' %></p>
       <p><%= station.text_field :route %></p>
 
@@ -42,5 +44,4 @@
   </div><!-- /.station -->
 
   <p><%= f.submit value: '登録する' %></p>
-
 <% end %>
