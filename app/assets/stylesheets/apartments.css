@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0 60px;
+  font-family: 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic ProN',
+    'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', 'ＭＳ ゴシック', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #000;
+}
+
+a:visited {
+  color: #666;
+}
+
+a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.container {
+  margin-left: 40px;
+}
+
+.notice {
+  color: green;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 4px;
+  width: 10rem;
+  margin-bottom: 10px;
+}
+
+.apartment {
+  border-bottom: 1px solid #999;
+}
