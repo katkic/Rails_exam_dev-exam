@@ -14,3 +14,7 @@ ja:
         route: 路線名
         name: 駅名
         walking_minutes: 徒歩分数
+      station:
+        route: 路線名
+        name: 駅名
+        walking_minutes: 徒歩分数
