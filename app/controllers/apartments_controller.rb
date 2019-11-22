@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  before_action :set_apartment, only: %i[show edit update]
+  before_action :set_apartment, only: %i[show edit update destroy]
 
   def index
     @apartments = Apartment.order(created_at: :desc)
@@ -21,7 +21,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
 
     if @apartment.save
-      redirect_to @apartment, notice: '物件情報を登録しました'
+      redirect_to @apartment, notice: "物件 #{@apartment.name} を登録しました"
     else
       render :new
     end
@@ -29,13 +29,15 @@ class ApartmentsController < ApplicationController
 
   def update
     if @apartment.update(apartment_params)
-      redirect_to apartment_path(@apartment)
+      redirect_to apartment_path(@apartment), notice: "物件 #{@apartment.name} を更新しました"
     else
       render :edit
     end
   end
 
   def destroy
+    @apartment.destroy
+    redirect_to apartments_path, notice: "物件 #{@apartment.name} を削除しました"
   end
 
   private
